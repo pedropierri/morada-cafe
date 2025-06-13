@@ -5,28 +5,237 @@
 /*----- Root -----*/
 :root {
     /*----- Tipografia -----*/
-    --fonte-titulos: 'Lora', serif;
+    --fonte-titulo: 'Lora', serif;
     --fonte-corpo: 'Montserrat', sans-serif;
 
     /*----- Paleta de cores -----*/
-    --cor-fundo: #EAE4D9;
+    --cor-fundo: #FAF8F2;
     --cor-principal: #5C3D2E;
-    --cor-destaque: #E07A5F;
-    --cor-texto: #3D405B;   
+    --cor-destaque: #70795A;
+    --cor-texto: #4B443C;
+    --cor-branca: #FFFFFF; /* Mantendo o branco para alguns textos */   
 }
 
+/*----- Configurações gerais -----*/
 * {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
 
+body {
+    background-color: var(--cor-fundo);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--fonte-titulo);
+}
+
+p, a {
+    font-family: var(--fonte-corpo);
+    text-decoration: none;
+}
+
+/*----- Header -----*/
 header {
+    position: relative;
+    height: 95px;
+    padding: 0px 40px;
+    background-color: var(--cor-fundo);
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+/* Ajustei o tamanho da logo para ser mais consistente */
+.logo-morada-cafe {
+    width: 250px;
+    height: auto; 
+}
+
+nav {
+    display: flex;
+    gap: 50px;
+}
+
+nav a {
+    font-size: 16px;
+    font-weight: 100;
+    color: var(--cor-principal);
+    transition: 0.3s;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    transform: scale(1.05);
+}
+
+/* Esconde o hamburger no desktop */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+/* Estilo das barrinhas do hamburger */
+.hamburger-menu .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: var(--cor-principal);
+    transition: all 0.3s ease-in-out;
+}
+
+/*----- Hero -----*/
+.hero-section {
+    display: flex;
+    align-items: center;
+    min-height: 85vh;
+    gap: 50px;
+    background-color: var(--cor-fundo);
+    justify-content: space-between;
+}
+
+.hero-image {
+    flex: 1;
+    height: 500px;
+
+    overflow: hidden; 
+    border-radius: 0 250px 250px 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 
-.logo-morada-cafe {
-    width: calc(600px - 15%);
-    height: calc(200px - 15%);
+.hero-text-content h1 {
+    font-size: 155px;
+    text-align: center;
+    color: var(--cor-principal);
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero-text-content p {
+    font-size: 24px;
+    text-align: center;
+    color: var(--cor-texto);
+    max-width: 100%
+}
+
+/*----- Atributos -----*/
+.atributos-section {
+    background-color: var(--cor-principal);
+}
+
+.atributos-section h2{
+    font-size: 60px;
+    text-align: center;
+    color: var(--cor-fundo);
+}
+
+.atributo-card-list {
+    display: flex;
+}
+
+.atributo-card {
+    border: 1px solid black;
+}
+
+/*----- Responsividade -----*/
+@media (max-width: 1100px) {
+
+    /*----- Header Mobile -----*/
+    header {
+        width: 100vw;
+        padding: 10px 20px;
+        gap: 0;
+        justify-content: space-between;
+    }
+
+    .logo-morada-cafe {
+        width: 230px;
+    }   
+
+    header nav {
+        display: none; 
+        flex-direction: column;
+        position: absolute;
+        top: 95px;
+        left: 0;
+        right: 0;
+        background-color: var(--cor-fundo);
+        border-top: 1px solid #eee;
+        z-index: 100;
+    }
+
+    header nav.active {
+        display: flex; 
+    }
+
+    header nav a {
+        padding: 20px;
+        text-align: center;
+        border-bottom: 1px solid #5c3d2e50;
+    }
+
+    header nav a:hover {
+        background-color: #f0ede6;
+        transform: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-menu.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger-menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger-menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /*----- Hero Mobile -----*/
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .hero-text-content {
+        order: 2;
+        align-items: center;
+    }
+    
+    .hero-image {
+        order: 1;
+        flex: none;
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .hero-text-content h1 {
+        font-size: 80px;
+    }
+
+    .hero-text-content p {
+        font-size: 1rem;
+        max-width: 100%;
+    }
 }
