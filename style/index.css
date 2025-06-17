@@ -1,0 +1,278 @@
+/*----- Hero -----*/
+.hero-section {
+    display: flex;
+    align-items: center;
+    min-height: 85vh;
+    gap: 50px;
+    background-color: var(--cor-fundo);
+    justify-content: space-between;
+}
+
+.hero-image {
+    flex: 1;
+    height: 500px;
+
+    overflow: hidden; 
+    border-radius: 0 250px 250px 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-text-content h1 {
+    font-size: 155px;
+    text-align: center;
+    color: var(--cor-principal);
+    line-height: 120px;
+    margin-bottom: 20px;
+}
+
+.hero-text-content p {
+    font-size: 24px;
+    text-align: center;
+    color: var(--cor-texto);
+    max-width: 100%
+}
+
+/*----- Atributos -----*/
+.atributos-section {
+    padding: 20px;
+    background-color: var(--cor-principal);
+    min-height: 300px;
+}
+
+.atributos-section h2{
+    margin-bottom: 20px;
+    font-size: 60px;
+    text-align: center;
+    color: var(--cor-fundo);
+}
+
+.atributo-content {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.atributo-card-list {
+    width: 100%;
+    padding: 10px 20px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+.atributo-card {
+    height: 100%;
+    width: 100%;
+    max-width: 400px;
+    padding: 15px 20px;
+    text-align: center;
+
+    border-radius: 10px;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    transition: 0.3s ease;
+
+    cursor: default;
+}
+
+.atributo-card:hover {
+    box-shadow: 0px 0px 0px 4px var(--cor-fundo);
+    transform: translateY(-10px);
+}
+
+.icon-svg {
+    width: 70px;
+    height: 70px;
+}
+
+.atributo-card h3{
+    margin-bottom: 8px;
+    font-size: 45px;
+    color: var(--cor-fundo);
+}
+
+.atributo-card p{
+    width: 100%;
+    font-size: 18px;
+    color: var(--cor-fundo);
+}
+
+.atributo-card-button {
+    width: 200px;
+    height: 40px;
+    margin-top: 30px;
+
+    background-color: var(--cor-branca);
+    font-family: var(--fonte-corpo);
+    color: var(--cor-texto);
+    font-size: 18px;
+
+    border: none ;
+    border-radius: 10px;
+    outline: none;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.atributo-card-button:hover {
+    transform: scale(1.05);
+}
+
+/*----- Destaque -----*/
+
+#destaque {
+    padding: 100px 0;
+    background-color: var(--cor-branca);
+}
+
+.destaque-container {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+}
+
+.destaque-texto {
+    flex: 1;
+}
+
+.destaque-texto h2 {
+    padding-left: 40px;
+    font-size: 120px;
+    line-height: 120px;
+    color: var(--cor-principal);
+    margin-bottom: 20px;
+}
+
+.destaque-texto p {
+    width: 800px;
+    padding-left: 40px;
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--cor-texto);
+}
+
+.destaque-imagem {
+    flex: 1;
+    overflow: hidden;
+    
+    border-radius: 250px 0 0 250px;
+}
+
+.destaque-imagem img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+/*----- Responsividade -----*/
+@media (max-width: 1100px) {
+
+    /*----- Hero Mobile -----*/
+    .hero-section {
+        flex-direction: column;
+        min-height: auto;
+        padding: 40px 20px;
+        text-align: center;
+    }
+    
+    .hero-text-content {
+        order: 2;
+        align-items: center;
+    }
+    
+    .hero-image {
+        order: 1;
+        flex: none;
+        width: 100%;
+        height: 300px;
+        border-radius: 20px;
+    }
+
+    .hero-text-content h1 {
+        font-size: 80px;
+        line-height: 70px;
+    }
+
+    .hero-text-content p {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    /*----- Atributos Mobile -----*/
+    .atributos-section {
+        margin-top: 20px;
+    }
+    .atributo-content h2 {
+        width: 100%;
+        font-size: 55px;
+    }
+
+    .atributo-card-list {
+        display: flex;
+        flex-flow: column wrap;
+    }
+
+    .atributo-card {
+        max-width: 100%;
+    }
+
+    .atributo-card h3 {
+        font-size: 35px;
+    }
+
+    .atributo-card p {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    /*----- Destaque Mobile -----*/
+    .destaque-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .destaque-texto {
+        order: 2;
+        text-align: center;
+        padding: 0;
+    }
+
+    .destaque-texto h2 {
+        font-size: 60px;
+        line-height: 1.2;
+        padding-left: 0;
+    }
+
+    .destaque-texto p {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        padding-left: 0;
+        font-size: 16px;
+    }
+
+    .destaque-imagem {
+        order: 1;
+        width: 100%;
+        border-radius: 20px;
+    }
+}
