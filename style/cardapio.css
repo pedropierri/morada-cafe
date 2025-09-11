@@ -153,7 +153,7 @@ p {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-evenly;
-  gap: 20px;
+  gap: 0px;
   text-align: center;
   padding: 20px;
   background-color: var(--cor-creme);

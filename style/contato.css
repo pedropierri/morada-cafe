@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Playfair+Display:wght@700&display=swap');
+
+:root {
+    --fonte-titulo: 'Lora', serif;
+    --fonte-corpo: 'Montserrat', sans-serif;
+
+    --cor-fundo: #FAF8F2;
+    --cor-principal: #5C3D2E;
+    --cor-destaque: #6A7A8A;
+    --cor-texto: #4B443C;
+    --cor-branca: #FFFFFF;
+}
+
+
+body {
+    background-color: var(--cor-creme);
+    font-family: var(--fonte-corpo);
+}
+
+main {
+    width: 90%;
+    max-width: 900px;
+    margin: 50px auto;
+}
+
+#contato {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding: 40px;
+    background-color: var(--cor-creme);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.contato-container {
+    flex: 2;
+    text-align: left;
+}
+
+.contato-container h2 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-principal);
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.contato-container p {
+    color: var(--cor-secundaria);
+    margin-bottom: 20px;
+}
+
+.informacoes-contato {
+    flex: 1;
+    text-align: left;
+    background-color: #e7dfd2;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.informacoes-contato h3 {
+    font-family: var(--fonte-titulo);
+    color: var(--cor-principal);
+    margin-bottom: 15px;
+}
+
+.informacoes-contato p {
+    font-size: 90%;
+    line-height: 1.6;
+}
+
+/* Estilização do Formulário */
+#form-contato label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 500;
+    color: var(--cor-principal);
+}
+
+#form-contato input,
+#form-contato textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--cor-secundaria);
+    border-radius: 5px;
+    font-family: var(--fonte-corpo);
+}
+
+#form-contato textarea {
+    resize: vertical;
+}
+
+#enviar-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    background-color: var(--cor-principal);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#enviar-btn:hover {
+    background-color: #4A2E22;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    #contato {
+        flex-direction: column;
+        gap: 20px;
+    }
+}
