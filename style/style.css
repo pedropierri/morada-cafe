@@ -83,15 +83,21 @@ nav a:hover {
     transition: all 0.3s ease-in-out;
 }
 
-/*----- Footer -----*/ 
-footer {
+/*----- Footer  -----*/ 
+.main-footer-section {
     background-color: var(--cor-principal);
     color: var(--cor-fundo);
-    padding: 60px 0 20px 0;
+    padding: 60px 0 0 0;
     margin-top: 100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-container {
+    width: 100%;
+    max-width: 1200px;
     padding: 0 50px;
     display: flex;
     justify-content: space-between;
@@ -109,6 +115,7 @@ footer {
     font-family: var(--fonte-titulo);
     font-size: 30px;
     margin-bottom: 15px;
+    color: var(--cor-branca);
 }
 
 .footer-col h4 {
@@ -120,7 +127,7 @@ footer {
 .footer-col p {
     font-size: 14.5px;
     line-height: 1.7;
-    color: #ffffffd5;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .footer-col ul {
@@ -131,37 +138,32 @@ footer {
     margin-bottom: 10px;
 }
 
-
 .footer-col a {
-    color: #ffffffd5;
-    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
     transition: color 0.3s ease;
 }
 
-footer a:hover {
+.main-footer-section a:hover {
     color: var(--cor-branca);
     text-decoration: underline;
 }
 
-.footer-socials a {
-    font-size: 24px;
-    margin-right: 15px;
+.footer-bottom {
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    border-top: 1px solid #ffffff30;
-    font-size: 20px;
-    color: #ffffffd5;
+.footer-bottom p {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.7);
 }
 
 .footer-bottom a {
-    color: #ffffffd5;
-}
-
-.footer-bottom a:hover {
-    text-decoration: underline;
+    color: var(--cor-branca);
+    font-weight: bold;
 }
 
 /*----- Responsividade -----*/
